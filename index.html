@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const text = prompt(`Podaj jakis tekst: `);
+        const param = prompt(`Podaj parametr: `);
+        const szukanie = prompt(`Wpisz słowo które chcesz wyszukać w tekscie: `);
+        const space = " ";
+        const name = prompt(`Podaj imię: `);
+        const zamiana = prompt(`Wpisz : "male" lub "duze" jesli chcesz podany tekst zmienic na male lub duze litery!`);
+        document.write(`Podany tekst: ${text}`);
+        document.write("<br>");
+        //długość tekstu
+        document.write(`Dlugosc tekstu: ${text.length} liter`);
+        document.write("<br>");
+        //Sprawdzanie litery lub spacji na pozycji
+        if (text.charAt(param-1) == space) document.write(`Na pozycji: ${param} jest spacja`);
+        else document.write(`Litera na pozycji: ${param}: ${text.charAt(param-1)}`);
+        document.write("<br>");
+        //Wyszukiwanie ciągu znaków w tekście
+        if (text.indexOf(szukanie) != -1) document.write(`Ciąg znaków ${szukanie} występuje w tekscie`);
+        else document.write(`Ciągu znaków nie ma w podanym tekscie!`);
+        document.write("<br>");
+        //Zgadywanie imienia
+        if (name == "Kuba") document.write(`Podaleś imie ${name}  jesteś mężczyzną`);
+        else if (name.slice(-1) == "a" || name.slice(-1) == "A") document.write(`Podałaś imię: ${name}  jesteś kobietą`);
+        else document.write(`Podałeś imię: ${name}  jesteś meżczyzną`);
+        document.write("<br>");
+        //Zamiana liter na male lub duze litery
+        if (zamiana == "male") document.write(`${text.toLowerCase()}`);
+        else if (zamiana == "duze") document.write(`${text.toUpperCase()}`);
+        else alert(`Nie podales male lub duze!`);
+    </script>
+</body>
+</html>
